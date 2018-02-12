@@ -23,7 +23,7 @@ case class SuccessToSearchUserData(user: User) extends SearchUserDataResult
 
 
 class Game (db: UserDb) {
-  def login: User.Id => LoginResult = id =>
+  def login(id: User.Id): LoginResult =
     (db.searchUserDataById(id)) match {
       case FailToSearchUserData => LoginFail
       case SuccessToSearchUserData(user) => LoginSuccess(user)
