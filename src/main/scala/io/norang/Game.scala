@@ -14,7 +14,7 @@ object Assets {
 }
 
 trait UserDb {
-  def searchUserDataById: User.Id => SearchUserDataResult
+  def searchUserDataById(id: User.Id): SearchUserDataResult
 }
 
 sealed trait SearchUserDataResult
